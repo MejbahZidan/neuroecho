@@ -1,0 +1,56 @@
+﻿version: 1.0.0
+
+app:
+  privacy_mode: true
+  allow_local_telemetry: false
+
+vision:
+  camera_index: 0
+  target_fps: 30
+  frame_skip_expressions: 2
+  models:
+    face_landmarker_url: "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task"
+    face_landmarker_path: "models/face_landmarker.task"
+    pose_landmarker_url: "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"
+    pose_landmarker_path: "models/pose_landmarker_lite.task"
+  calibration:
+    duration_seconds: 60
+    min_samples: 300
+  eyes:
+    default_ear_threshold: 0.21
+    min_blink_duration_ms: 80
+    drowsy_blink_duration_ms: 350
+    rolling_windows_seconds:
+      short: 30
+      long: 300
+    perclos_drowsy_threshold: 0.15
+  posture:
+    angle_tolerance_deg: 12.0
+    slouch_distance_drop_ratio: 0.15
+  quality:
+    min_brightness: 40.0
+    max_brightness: 220.0
+    blur_laplacian_threshold: 100.0
+
+audio:
+  sample_rate: 16000
+  chunk_duration_seconds: 5.0
+  vad_aggressiveness: 2
+  whisper_model_size: "base"
+  language: "en"
+
+probes:
+  trigger_threshold: 0.60
+  consecutive_triggers: 3
+  cooldown_minutes: 30
+  probes_per_hour: 2
+
+fusion:
+  update_interval_seconds: 1.0
+  smoothing_ema_alpha: 0.3
+  hysteresis_persistence_seconds: 3.0
+
+interventions:
+  posture_reminder_interval_minutes: 30
+  posture_bad_streak_minutes: 15
+  breathing_default: "4-4-4-4"

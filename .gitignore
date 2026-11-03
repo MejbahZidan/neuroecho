@@ -1,0 +1,28 @@
+﻿# Virtual Environment
+venv/
+env/
+.venv/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local model binaries (auto-downloaded on first run)
+models/*.task
+models/*.bin
+models/*.onnx
+
+# Local privacy / telemetry data
+data/
+*.jsonl
+*.json
+
+# Sample media
+sample.mp4
+*.wav
+
+# IDEs
+.vscode/
+.idea/

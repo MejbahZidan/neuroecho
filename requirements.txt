@@ -1,0 +1,16 @@
+﻿numpy>=1.24.3,<2.0.0
+scipy>=1.11.0,<1.13.0
+pyyaml>=6.0.1
+pydantic>=2.5.0
+opencv-python-headless>=4.8.1.78
+mediapipe>=0.10.14
+librosa>=0.10.1
+sounddevice>=0.4.6
+webrtcvad-wheels>=2.0.10.post2
+faster-whisper>=1.0.0
+transformers>=4.38.0
+torch>=2.2.0 --index-url https://download.pytorch.org/whl/cpu
+PySide6>=6.6.1
+pytest>=7.4.3
+ruff>=0.2.0
+mypy>=1.8.0
